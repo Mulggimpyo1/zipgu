@@ -324,8 +324,8 @@ $config['cache_query_string'] = FALSE;
 | https://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = "---" //보안관련 삭제;
-$config['password_key'] = "---" //보안관련 삭제;
+$config['encryption_key'] = "---"; //보안관련 삭제;
+$config['password_key'] = "---"; //보안관련 삭제;
 
 /*
 |--------------------------------------------------------------------------
