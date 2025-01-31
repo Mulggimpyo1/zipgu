@@ -1,0 +1,20 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # 코드이그나이터에서 index.php 주소에 남는거 삭제제
+    RewriteCond %{REQUEST_URI} ^/admin
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^Admin/(.*)$ admin/index.php/$1 [L]
+
+    # 폴더정의
+    RewriteCond $1 !^(index\.php|images|captcha|data|include|uploads|robots\.txt)
+
+    # 리액트에서는 admin에 접근 불가
+    RewriteCond %{REQUEST_URI} !^/admin
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ /public_html/index.html [L]
+
+</IfModule>

@@ -1,0 +1,3 @@
+# pem파일 업로드 방지
+*.pem
+database.php
